@@ -12,7 +12,7 @@ const NavigationBar = () => {
         <div className="collapse navbar-collapse">
           <ul className='nav navbar-nav navbar-right'>
             <li>
-              <Link to='/signin'>Sign In</Link>
+              <Link to='/signup'>Sign In</Link>
             </li>
           </ul>  
         </div>

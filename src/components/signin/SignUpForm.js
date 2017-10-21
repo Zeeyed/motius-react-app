@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
-class SignInForm extends React.Component {
+class SignUpForm extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       username: '',
+      email: '',
       password: '',
+      passwordConfirmation: '',
     }
 
     this.onChange = this.onChange.bind(this);
@@ -40,12 +42,32 @@ class SignInForm extends React.Component {
           />
         </div>
         <div className='form-group'>
+          <label className='control-label'>Email</label>
+          <input
+            value={ this.state.email }
+            onChange={this.onChange}
+            type='email'
+            name='email'
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
           <label className='control-label'>Password</label>
           <input
             value={ this.state.password }
             onChange={this.onChange}
             type='password'
             name='password'
+            className='form-control'
+          />
+        </div>
+        <div className='form-group'>
+          <label className='control-label'>Password Confirmation</label>
+          <input
+            value={ this.state.passwordConfirmation }
+            onChange={this.onChange}
+            type='password'
+            name='passwordConfirmation'
             className='form-control'
           />
         </div>
@@ -59,4 +81,4 @@ class SignInForm extends React.Component {
   }
 }
 
-export default SignInForm;
+export default SignUpForm;

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import SignInForm from './SignInForm';
+import SignUpForm from './SignUpForm';
 
-class SignInPage extends React.Component {
+class SignUpPage extends React.Component {
   render () {
     return (
       <div className='row'>
         <div className='col-md-4 col-md-offset-4'>
-          <SignInForm />
+          <SignUpForm />
         </div>
       </div>
     );
   }
 }
 
-export default SignInPage;
+export default SignUpPage;
