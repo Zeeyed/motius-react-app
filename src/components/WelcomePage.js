@@ -2,7 +2,7 @@ import React from 'react';
 
 const WelcomePage = () => (
   <div className='jumbotron'>
-    <h1>Hii</h1>
+    <h1>Welcome To React Test Project</h1>
   </div>
 );
 

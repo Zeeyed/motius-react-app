@@ -9,7 +9,7 @@ export function userSignInRequest(data) {
       const token = res.data.token;
       localStorage.setItem('jwtToken', token);
       setAuthTokenHeader(token);
-      console.log(jwt.decode(token))
+      // console.log(token)
     })
   }
 }

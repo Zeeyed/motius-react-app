@@ -28,7 +28,7 @@ class SignInForm extends React.Component {
           type: 'success',
           text: 'You are successfully loged in'
         })
-        this.context.router.push('/');
+        this.context.router.push('/projects');
       },
     );
   }
