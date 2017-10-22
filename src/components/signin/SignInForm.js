@@ -22,11 +22,19 @@ class SignInForm extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-    this.props.userSignInRequest(this.state);
-    // axios.post('/api/users', { user: this.state })
+    this.props.userSignInRequest(this.state).then(
+      () => {
+        this.props.addFlashMessages({
+          type: 'success',
+          text: 'You are successfully loged in'
+        })
+        this.context.router.push('/');
+      },
+    );
   }
 
   render () {
+    const { username, password } = this.props;
     return (
       <form onSubmit={this.onSubmit}>
         <h1>Sign In Here</h1>
@@ -34,7 +42,7 @@ class SignInForm extends React.Component {
         <div className='form-group'>
           <label className='control-label'>Username</label>
           <input
-            value={ this.state.username }
+            value={ username }
             onChange={this.onChange}
             type='text'
             name='username'
@@ -44,7 +52,7 @@ class SignInForm extends React.Component {
         <div className='form-group'>
           <label className='control-label'>Password</label>
           <input
-            value={ this.state.password }
+            value={ password }
             onChange={this.onChange}
             type='password'
             name='password'
@@ -62,7 +70,12 @@ class SignInForm extends React.Component {
 }
 
 SignInForm.propTypes = {
-  userSignInRequest: PropTypes.func.isRequired
+  userSignInRequest: PropTypes.func.isRequired,
+  addFlashMessages: PropTypes.func.isRequired
+}
+
+SignInForm.contextTypes = {
+  router: PropTypes.object.isRequired
 }
 
 export default SignInForm;
