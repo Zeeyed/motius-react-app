@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { userSignInRequest } from '../../actions/signinActions';
 
 class SignInForm extends React.Component {
 
@@ -78,4 +80,4 @@ SignInForm.contextTypes = {
   router: PropTypes.object.isRequired
 }
 
-export default SignInForm;
+export default connect(null, { userSignInRequest })(SignInForm);
