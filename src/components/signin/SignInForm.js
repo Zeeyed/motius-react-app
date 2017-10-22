@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import PropTypes from 'prop-types';
 
 class SignInForm extends React.Component {
 
@@ -22,7 +22,8 @@ class SignInForm extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-    axios.post('/api/users', { user: this.state })
+    this.props.userSignInRequest(this.state);
+    // axios.post('/api/users', { user: this.state })
   }
 
   render () {
@@ -58,6 +59,10 @@ class SignInForm extends React.Component {
       </form>
     );
   }
+}
+
+SignInForm.propTypes = {
+  userSignInRequest: PropTypes.func.isRequired
 }
 
 export default SignInForm;
